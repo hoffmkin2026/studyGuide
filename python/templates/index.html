@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login Page</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="login-wrapper">
+        <div class="glass-card login-card">
+
+            <h1 class="login-title">
+                Welcome Back
+            </h1>
+
+            <p class="login-subtitle">
+                Sign in to continue to your study dashboard.
+            </p>
+            {% if error %}
+                <p class="error-message">
+                    {{ error }}
+                </p>
+
+            {% endif %}
+            <form method="POST">
+                <label>Username</label>
+                <input
+                    type="text"
+                    name="username"
+                    class="form-control"
+                    placeholder="Enter Username"
+                    required>
+                <label>Password</label>
+                <input
+                    type="password"
+                    name="password"
+                    class="form-control"
+                    placeholder="Enter Password"
+                    required>
+                <button
+                    type="submit"
+                    class="primary-btn">
+                    Login
+                </button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
